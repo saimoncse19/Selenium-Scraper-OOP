@@ -46,7 +46,7 @@ class CarCrawler:
     def start_driver():
         options = webdriver.ChromeOptions()
         options.add_argument('--start-maximized')
-        driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         return driver
 
     # Close the browser/driver
@@ -89,7 +89,6 @@ class CarCrawler:
 
             # wait until page is reloaded
             time.sleep(2)
-            radius_input_field = self.driver.find_element_by_css_selector(self.radius_selector)
             self.wait(radius_input_field, 30)
 
             # add radius to the url and reload
