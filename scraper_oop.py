@@ -152,7 +152,7 @@ class CarCrawler:
             return
         next_page_url = urljoin(self.driver.current_url, next_page_url)
 
-        # call to next page recursively
+        # call to next page recursively. Please comment the next two lines to only scrape first page
         self.get_url(next_page_url)
         self.get_car_listings()
 
